@@ -14,11 +14,11 @@ Steps:
 5. Copy this file locally off the host
 6. Import this tar ball into docker (Example)
    This would import the image with the tag name `codylane:centos6`.
-   ```
-    cat centos6.tar.gz | docker import - codylane:centos6
-   ```
+```
+cat centos6.tar.gz | docker import - codylane:centos6
+```
 7. Or you can use scratch using a docker file
-   ```
+```
    FROM scratch
    ADD $(basename centos6.tar.gz) /
-   ```
+```
