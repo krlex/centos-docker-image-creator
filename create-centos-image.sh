@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $(whoami) != 'root' ]; then
+  echo "ERR: You must be root to run this script"
+  exit 1
+fi
+
 OS_VER=6
 
 DISTRIB="centos"
@@ -50,7 +55,7 @@ YUM_OPTS="$YUM_BASE_OPTS install -y"
 
 for PKG in $PACKAGES
 do
-	YUM_OPTS="$YUM_OPTS $PKG"
+  YUM_OPTS="$YUM_OPTS $PKG"
 done
 
 eval "$YUM_OPTS"
