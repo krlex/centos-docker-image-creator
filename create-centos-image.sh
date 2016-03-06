@@ -69,10 +69,11 @@ YUM_OPTS="$YUM_BASE_OPTS -y clean all"
 
 eval $YUM_OPTS
 
+rm -rf $TARGET_DIR/usr/{{lib,share}/locale,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive}
 rm -rf $TARGET_DIR/usr/share/{man,doc,info,gnome/help}
 rm -rf $TARGET_DIR/usr/share/cracklib
 rm -rf $TARGET_DIR/usr/share/i18n
-rm -rf $TARGET_DIR/var/cache/yum
+rm -rf $TARGET_DIR/var/cache/yum/*
 
 mkdir -p --mode=0755 "$target"/var/cache/yum
 
