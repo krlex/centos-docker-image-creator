@@ -19,6 +19,8 @@ cat centos6.tar.gz | docker import - codylane:centos6
 ```
 7. Or you can use scratch using a docker file
 ```
-   FROM scratch
-   ADD $(basename centos6.tar.gz) /
+  FROM scratch
+  ADD centos6.tar.gz /
+
+  CMD ["/bin/bash"]
 ```
